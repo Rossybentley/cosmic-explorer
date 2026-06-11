@@ -28,7 +28,7 @@ function Mars() {
         }
         setPhotos(data);
       })
-      .catch((err) => {
+      .catch(() => {
         setError("Failed to load photos");
       });
   }, []);
