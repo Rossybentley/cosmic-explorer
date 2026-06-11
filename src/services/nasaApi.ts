@@ -9,18 +9,18 @@ const api = axios.create({
 
 // APOD
 export async function getAPOD(): Promise<APOD> {
-  const { data } = await axios.get(
-    `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`, // 👈 fixed missing colon
-  );
+  const { data } = await api.get(`/planetary/apod`, {
+    params: { api_key: API_KEY },
+  });
   return data;
 }
 
 // Mars Photos
 export const getMarsPhotos = async () => {
-  const { data } = await api.get(
-    `/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=${API_KEY}`,
+  const { data } = await axios.get(
+    `https://mars.nasa.gov/rss/api/?feed=raw_images&category=mars2020&feedtype=json&num=25&page=0`,
   );
-  return data.photos;
+  return data.images; // each has .image_files.medium, .sol, .caption etc.
 };
 
 // NASA Image Search
@@ -31,4 +31,19 @@ export const searchNASAImages = async (
     `https://images-api.nasa.gov/search?q=${query}`,
   );
   return data.collection.items;
+};
+
+// Asteroids
+export const getAsteroids = async () => {
+  const today = new Date().toISOString().split("T")[0];
+
+  const { data } = await api.get(`/neo/rest/v1/feed`, {
+    params: {
+      start_date: today,
+      end_date: today,
+      api_key: API_KEY,
+    },
+  });
+
+  return data.near_earth_objects[today];
 };

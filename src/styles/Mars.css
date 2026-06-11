@@ -1,0 +1,75 @@
+.mars-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mars-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #e25822;
+  margin-bottom: 0.25rem;
+}
+
+.mars-subtitle {
+  font-size: 0.95rem;
+  color: #888;
+  margin-bottom: 2rem;
+}
+
+.mars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.mars-card {
+  background: #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #2a2a2a;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.mars-card:hover {
+  transform: translateY(-4px);
+  border-color: #e25822;
+}
+
+.mars-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.mars-card-info {
+  padding: 0.75rem 1rem;
+}
+
+.mars-sol {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #e25822;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.mars-caption {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin: 0.25rem 0 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mars-loading,
+.mars-error {
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 1.1rem;
+  color: #e25822;
+}

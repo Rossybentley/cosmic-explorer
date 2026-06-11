@@ -4,6 +4,7 @@ import Mars from "./pages/Mars";
 import Favorites from "./pages/Favorites";
 import Navbar from "./components/Navbar";
 import Search from "./pages/Search";
+import Asteroids from "./pages/Asteroids";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/mars" element={<Mars />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/asteroids" element={<Asteroids />} />
       </Routes>
     </BrowserRouter>
   );
