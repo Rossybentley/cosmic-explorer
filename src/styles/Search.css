@@ -112,3 +112,40 @@
   color: #4a9eff;
   font-weight: 600;
 }
+@media (max-width: 768px) {
+  .search-page {
+    padding: 1rem;
+  }
+
+  .search-title {
+    font-size: 1.5rem;
+  }
+
+  .search-subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .search-button {
+    width: 100%;
+  }
+
+  .search-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+
+  .search-img {
+    height: 130px;
+  }
+
+  .search-card:hover {
+    transform: none;
+    border-color: #2a2a2a;
+  }
+}

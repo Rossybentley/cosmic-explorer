@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "../styles/Navbar.css";
 import { motion } from "framer-motion";
 
 function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <motion.nav
       className="navbar"
@@ -14,12 +17,32 @@ function Navbar() {
         🚀 Cosmic Explorer
       </Link>
 
-      <div className="nav-links">
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/mars">Mars</NavLink>
-        <NavLink to="/favorites">Favorites</NavLink>
-        <NavLink to="/asteroids">Asteroids</NavLink>
-        <NavLink to="/search">Search</NavLink>
+      <button
+        className="hamburger"
+        onClick={() => setIsOpen((prev) => !prev)}
+        aria-label="Toggle navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div className={`nav-links ${isOpen ? "open" : ""}`}>
+        <NavLink to="/" onClick={() => setIsOpen(false)}>
+          Home
+        </NavLink>
+        <NavLink to="/mars" onClick={() => setIsOpen(false)}>
+          Mars
+        </NavLink>
+        <NavLink to="/favorites" onClick={() => setIsOpen(false)}>
+          Favorites
+        </NavLink>
+        <NavLink to="/asteroids" onClick={() => setIsOpen(false)}>
+          Asteroids
+        </NavLink>
+        <NavLink to="/search" onClick={() => setIsOpen(false)}>
+          Search
+        </NavLink>
       </div>
     </motion.nav>
   );

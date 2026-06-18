@@ -73,3 +73,31 @@
   font-size: 1.1rem;
   color: #e25822;
 }
+@media (max-width: 768px) {
+  .mars-page {
+    padding: 1rem;
+  }
+
+  .mars-title {
+    font-size: 1.5rem;
+  }
+
+  .mars-subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .mars-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+
+  .mars-img {
+    height: 140px;
+  }
+
+  .mars-card:hover {
+    transform: none;
+    border-color: #2a2a2a;
+  }
+}

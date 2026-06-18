@@ -128,3 +128,48 @@
   border-color: #e05252;
   color: #e05252;
 }
+@media (max-width: 768px) {
+  .favorites-page {
+    padding: 1rem;
+  }
+
+  .favorites-title {
+    font-size: 1.5rem;
+  }
+
+  .favorites-subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .favorites-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+
+  .favorite-img {
+    height: 140px;
+  }
+
+  .favorite-overlay {
+    opacity: 1; /* always visible on touch — no hover */
+    background: rgba(0, 0, 0, 0.35);
+  }
+
+  .favorite-card:hover {
+    transform: none;
+    border-color: #2a2a2a;
+  }
+
+  .favorite-img-wrapper:hover .favorite-overlay {
+    opacity: 1;
+  }
+
+  .favorites-empty {
+    height: 40vh;
+  }
+
+  .favorites-empty p {
+    font-size: 1.2rem;
+  }
+}
