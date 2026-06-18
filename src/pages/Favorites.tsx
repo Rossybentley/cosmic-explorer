@@ -51,7 +51,10 @@ function Favorites() {
                 className="favorite-img"
                 onClick={() => setSelectedPhoto(photo)}
               />
-              <div className="favorite-overlay">
+              <div
+                className="favorite-overlay"
+                onClick={() => setSelectedPhoto(photo)}
+              >
                 <span>View</span>
               </div>
             </div>
