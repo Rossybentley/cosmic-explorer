@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { APOD } from "../types/nasa";
-import "../styles/Favorites.css";
+import "../styles/favorites.css";
 import ImageModal from "../components/ImageModal";
 
 function Favorites() {
